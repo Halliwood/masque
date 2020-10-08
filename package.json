@@ -1,6 +1,6 @@
 {
   "name": "fy-unity-masque",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Modify unity prefab text colors in batch mode.",
   "main": "bin/index.js",
   "scripts": {
