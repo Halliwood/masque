@@ -4,7 +4,7 @@
   "description": "Modify unity prefab text colors in batch mode.",
   "main": "bin/index.js",
   "scripts": {
-    "test": "tsc && node bin/index.js -s 'G:\\ycxszjb\\trunk\\' -o ",
+    "test": "tsc && node bin/index.js -s 'G:\\muweb\\trunk\\project\\'",
     "build": "tsc",
     "release": "npm version patch && npm publish"
   },

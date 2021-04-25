@@ -65,11 +65,17 @@ export class PrefabParser {
         let elem = {} as UnityElement;
         elem.yamlID = yamlID;
         elem.fileID = fileID;
-        let obj = yaml.parse(elemContent);
-        for(let key in obj) {
-            elem.type = key;
-            elem.object = obj[key];
-            break;
+        try {
+            let obj = yaml.parse(elemContent);
+            for(let key in obj) {
+                elem.type = key;
+                elem.object = obj[key];
+                break;
+            }
+        } catch(e) {
+            console.log(elemContent);
+            console.error(e);
+            throw new Error('YAML parse error!');
         }
         if(!elem.type) {
             throw new Error('Prefab parse error!');

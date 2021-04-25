@@ -76,11 +76,18 @@ var PrefabParser = /** @class */ (function () {
         var elem = {};
         elem.yamlID = yamlID;
         elem.fileID = fileID;
-        var obj = yaml_1.default.parse(elemContent);
-        for (var key in obj) {
-            elem.type = key;
-            elem.object = obj[key];
-            break;
+        try {
+            var obj = yaml_1.default.parse(elemContent);
+            for (var key in obj) {
+                elem.type = key;
+                elem.object = obj[key];
+                break;
+            }
+        }
+        catch (e) {
+            console.log(elemContent);
+            console.error(e);
+            throw new Error('YAML parse error!');
         }
         if (!elem.type) {
             throw new Error('Prefab parse error!');

@@ -23,7 +23,7 @@ const getPath = (val: string): string => {
 program
 	.version(myPackage.version, "-v, --version")
 	.option("-s, --src <path>", "[MUST] Input project path. Direction only.", getPath)
-	.option("-o, --output <path>", "Outout path. Direction only. Like -o 'out'", getPath)
+	.option("-o, --output [path]", "Outout path. Direction only. Like -o 'out'", getPath)
 	.option("-f, --logFormat", "Log format, etc: processing: %s", getPath)
     .parse(process.argv);
 
